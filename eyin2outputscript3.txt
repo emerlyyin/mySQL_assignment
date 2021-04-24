@@ -1,0 +1,72 @@
+Warning: Using a password on the command line interface can be insecure.
+ERROR 1046 (3D000) at line 1: No database selected
+ERROR 1046 (3D000) at line 2: No database selected
+ERROR 1046 (3D000) at line 3: No database selected
+ERROR 1046 (3D000) at line 4: No database selected
+ERROR 1046 (3D000) at line 5: No database selected
+ERROR 1046 (3D000) at line 6: No database selected
+ERROR 1046 (3D000) at line 7: No database selected
+ERROR 1046 (3D000) at line 13: No database selected
+ERROR 1046 (3D000) at line 14: No database selected
+ERROR 1046 (3D000) at line 15: No database selected
+ERROR 1046 (3D000) at line 16: No database selected
+ERROR 1046 (3D000) at line 17: No database selected
+ERROR 1046 (3D000) at line 18: No database selected
+--------------
+ SELECT DISTINCT coursename FROM westerncs
+--------------
+
+--------------
+ SELECT DISTINCT coursecode FROM otherunics
+--------------
+
+--------------
+ SELECT * FROM westerncs ORDER BY coursename
+--------------
+
+--------------
+ SELECT coursenum FROM westerncs WHERE weight = 0.5
+--------------
+
+--------------
+ SELECT coursecode, coursename FROM otherunics WHERE unicode = 2
+--------------
+
+--------------
+ SELECT coursename, nickname FROM otherunics INNER JOIN universities ON unicode=uniquenum WHERE coursename LIKE "Introduction%"
+--------------
+
+--------------
+ SELECT westerncs.coursename, otherunics.coursename, officialname, datedecided 
+FROM (((otherunics INNER JOIN equivalent ON coursecode = OTHERcoursecode AND unicode = otherunicode)
+INNER JOIN universities ON uniquenum = unicode) 
+INNER JOIN westerncs ON UWOcoursenum  = coursenum) 
+WHERE datedecided 
+IN (SELECT datedecided FROM equivalent WHERE DATEDIFF(CURDATE(), datedecided) >= 1826)
+--------------
+
+--------------
+ SELECT coursename, nickname FROM ((equivalent INNER JOIN otherunics ON coursecode = OTHERcoursecode) INNER JOIN universities ON unicode = uniquenum) WHERE otherUniNick = nickname AND UWOcoursenum="CS1026"
+--------------
+
+--------------
+ SELECT COUNT(UWOcoursenum) FROM equivalent WHERE UWOcoursenum = "cs1026"
+--------------
+
+--------------
+ SELECT westerncs.coursename, otherunics.coursename, otherUniNick FROM ((equivalent INNER JOIN otherunics ON coursecode = OTHERcoursecode) INNER JOIN westerncs ON coursenum = UWOcoursenum)WHERE otherunicode = 4
+--------------
+
+--------------
+ SELECT officialname FROM universities WHERE uniquenum NOT IN(SELECT DISTINCT otherunicode FROM equivalent)
+--------------
+
+--------------
+ SELECT UWOcoursenum, coursename FROM equivalent INNER JOIN westerncs ON coursenum = UWOcoursenum  WHERE Othercoursecode IN (SELECT coursecode FROM otherunics WHERE yearstudents = 3 OR yearstudents = 4)
+--------------
+
+--------------
+ SELECT DISTINCT coursename FROM westerncs INNER JOIN equivalent ON UWOcoursenum =coursenum WHERE coursenum IN (SELECT UWOcoursenum FROM equivalent GROUP BY (UWOcoursenum) HAVING COUNT(UWOcoursenum) > 1)
+--------------
+
+Bye

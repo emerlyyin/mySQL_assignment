@@ -1,0 +1,394 @@
+Warning: Using a password on the command line interface can be insecure.
+--------------
+SELECT * FROM universities
+--------------
+
+Empty set (0.00 sec)
+
+--------------
+LOAD DATA LOCAL INFILE "uni_insertfile.txt" INTO TABLE universities FIELDS TERMINATED BY ','
+--------------
+
+Query OK, 7 rows affected (0.03 sec)
+Records: 7  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+SELECT * FROM universities
+--------------
+
++-----------+--------------------------------+-----------+--------------+----------+
+| uniquenum | officialname                   | city      | provincecode | nickname |
++-----------+--------------------------------+-----------+--------------+----------+
+|         2 | University Of Toronto          | Toronto   | ON           | UofT     |
+|         4 | University of Waterloo         | Waterloo  | ON           | Waterloo |
+|        24 | Concordia University           | Montreal  | QB           | Concord  |
+|        55 | McMaster University            | Hamilton  | ON           | Mac      |
+|        66 | University of British Columbia | Vancouver | BC           | UBC      |
+|        77 | Wilfred Laurier University     | Waterloo  | ON           | Laurier  |
+|        88 | McGill University              | Montreal  | QB           | McGill   |
++-----------+--------------------------------+-----------+--------------+----------+
+7 rows in set (0.00 sec)
+
+--------------
+SELECT * FROM westerncs
+--------------
+
+Empty set (0.02 sec)
+
+--------------
+INSERT INTO westerncs VALUES ("cs1026", "Computer Science Fundamentals I", 0.5, "A/B")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO westerncs VALUES ("cs1027", "Computer Science Fundamentals II", 0.5, "A/B")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO westerncs VALUES ("cs2210", "Algorithms and Data Structures", 1.0, "A/B")
+--------------
+
+Query OK, 1 row affected (0.12 sec)
+
+--------------
+INSERT INTO westerncs VALUES ("cs3319", "Databases I", 0.5, "A/B")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO westerncs VALUES ("cs2120", "Modern Survival Skills I: Coding Essentials", 0.5, "A/B")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO westerncs VALUES ("cs4490", "Thesis", 0.5, "Z")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO westerncs VALUES ("cs0020", "Intro to Coding using Pascal and Fortran", 1.0, NULL)
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO westerncs VALUES ("cs3333", "Computer Programming in Movie Production", 0.5, "A/B")
+--------------
+
+Query OK, 1 row affected (0.17 sec)
+
+--------------
+SELECT * FROM westerncs
+--------------
+
++-----------+---------------------------------------------+--------+--------+
+| coursenum | coursename                                  | weight | suffix |
++-----------+---------------------------------------------+--------+--------+
+| cs0020    | Intro to Coding using Pascal and Fortran    |      1 | NULL   |
+| cs1026    | Computer Science Fundamentals I             |    0.5 | A/B    |
+| cs1027    | Computer Science Fundamentals II            |    0.5 | A/B    |
+| cs2120    | Modern Survival Skills I: Coding Essentials |    0.5 | A/B    |
+| cs2210    | Algorithms and Data Structures              |      1 | A/B    |
+| cs3319    | Databases I                                 |    0.5 | A/B    |
+| cs3333    | Computer Programming in Movie Production    |    0.5 | A/B    |
+| cs4490    | Thesis                                      |    0.5 | Z      |
++-----------+---------------------------------------------+--------+--------+
+8 rows in set (0.00 sec)
+
+--------------
+SELECT * FROM universities
+--------------
+
++-----------+--------------------------------+-----------+--------------+----------+
+| uniquenum | officialname                   | city      | provincecode | nickname |
++-----------+--------------------------------+-----------+--------------+----------+
+|         2 | University Of Toronto          | Toronto   | ON           | UofT     |
+|         4 | University of Waterloo         | Waterloo  | ON           | Waterloo |
+|        24 | Concordia University           | Montreal  | QB           | Concord  |
+|        55 | McMaster University            | Hamilton  | ON           | Mac      |
+|        66 | University of British Columbia | Vancouver | BC           | UBC      |
+|        77 | Wilfred Laurier University     | Waterloo  | ON           | Laurier  |
+|        88 | McGill University              | Montreal  | QB           | McGill   |
++-----------+--------------------------------+-----------+--------------+----------+
+7 rows in set (0.00 sec)
+
+--------------
+INSERT INTO universities VALUES (8, "Film School of Whitehorse", "Whitehorse", "YT", "FSW")
+--------------
+
+Query OK, 1 row affected (0.09 sec)
+
+--------------
+SELECT * FROM universities
+--------------
+
++-----------+--------------------------------+------------+--------------+----------+
+| uniquenum | officialname                   | city       | provincecode | nickname |
++-----------+--------------------------------+------------+--------------+----------+
+|         2 | University Of Toronto          | Toronto    | ON           | UofT     |
+|         4 | University of Waterloo         | Waterloo   | ON           | Waterloo |
+|         8 | Film School of Whitehorse      | Whitehorse | YT           | FSW      |
+|        24 | Concordia University           | Montreal   | QB           | Concord  |
+|        55 | McMaster University            | Hamilton   | ON           | Mac      |
+|        66 | University of British Columbia | Vancouver  | BC           | UBC      |
+|        77 | Wilfred Laurier University     | Waterloo   | ON           | Laurier  |
+|        88 | McGill University              | Montreal   | QB           | McGill   |
++-----------+--------------------------------+------------+--------------+----------+
+8 rows in set (0.00 sec)
+
+--------------
+SELECT * FROM otherunics
+--------------
+
+Empty set (0.00 sec)
+
+--------------
+INSERT INTO otherunics VALUES ("CompSci022", "Introduction to Programming",0.5,1, 2)
+--------------
+
+Query OK, 1 row affected (0.03 sec)
+
+--------------
+INSERT INTO otherunics VALUES ("CompSci033", "Intro to Programming for Med Students",0.5,3, 2)
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO otherunics VALUES ("CompSci021", "Packages",0.5,1, 2)
+--------------
+
+Query OK, 1 row affected (0.05 sec)
+
+--------------
+INSERT INTO otherunics VALUES ("CompSci222", "Introduction to Databases",1.0,2, 2)
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO otherunics VALUES ("CompSci023", "Advanced Programming",0.5,1, 2)
+--------------
+
+Query OK, 1 row affected (0.10 sec)
+
+--------------
+INSERT INTO otherunics VALUES ("CompSci011", "Intro to Computer Science",1.0,2, 4)
+--------------
+
+Query OK, 1 row affected (0.02 sec)
+
+--------------
+INSERT INTO otherunics VALUES ("CompSci123", "Using UNIX",0.5,2, 4)
+--------------
+
+Query OK, 1 row affected (0.08 sec)
+
+--------------
+INSERT INTO otherunics VALUES ("CompSci021", "Intro Programming",1.0,1, 66)
+--------------
+
+Query OK, 1 row affected (0.05 sec)
+
+--------------
+INSERT INTO otherunics VALUES ("CompSci022", "Advanced Programming",0.5,1, 66)
+--------------
+
+Query OK, 1 row affected (0.06 sec)
+
+--------------
+INSERT INTO otherunics VALUES ("CompSci319", "Using Databases",0.5,3, 66)
+--------------
+
+Query OK, 1 row affected (0.07 sec)
+
+--------------
+INSERT INTO otherunics VALUES ("CompSci333", "Graphics",0.5,3, 55)
+--------------
+
+Query OK, 1 row affected (0.05 sec)
+
+--------------
+INSERT INTO otherunics VALUES ("CompSci444", "Networks",0.5,4, 55)
+--------------
+
+Query OK, 1 row affected (0.07 sec)
+
+--------------
+INSERT INTO otherunics VALUES ("CompSci022", "Using Packages",0.5,1, 77)
+--------------
+
+Query OK, 1 row affected (0.02 sec)
+
+--------------
+INSERT INTO otherunics VALUES ("CompSci101", "Introduction to Data Structures",0.5,2, 77)
+--------------
+
+Query OK, 1 row affected (0.03 sec)
+
+--------------
+INSERT INTO otherunics VALUES ("CompSci321", "Special Effects",0.5,2, 8)
+--------------
+
+Query OK, 1 row affected (0.02 sec)
+
+--------------
+INSERT INTO otherunics VALUES ("CompSci310", "Computer Generated Image",1.0,3, 8)
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+SELECT * FROM otherunics
+--------------
+
++------------+---------------------------------------+--------+--------------+---------+
+| coursecode | coursename                            | weight | yearstudents | unicode |
++------------+---------------------------------------+--------+--------------+---------+
+| CompSci022 | Introduction to Programming           |    0.5 |            1 |       2 |
+| CompSci033 | Intro to Programming for Med Students |    0.5 |            3 |       2 |
+| CompSci021 | Packages                              |    0.5 |            1 |       2 |
+| CompSci222 | Introduction to Databases             |      1 |            2 |       2 |
+| CompSci023 | Advanced Programming                  |    0.5 |            1 |       2 |
+| CompSci011 | Intro to Computer Science             |      1 |            2 |       4 |
+| CompSci123 | Using UNIX                            |    0.5 |            2 |       4 |
+| CompSci021 | Intro Programming                     |      1 |            1 |      66 |
+| CompSci022 | Advanced Programming                  |    0.5 |            1 |      66 |
+| CompSci319 | Using Databases                       |    0.5 |            3 |      66 |
+| CompSci333 | Graphics                              |    0.5 |            3 |      55 |
+| CompSci444 | Networks                              |    0.5 |            4 |      55 |
+| CompSci022 | Using Packages                        |    0.5 |            1 |      77 |
+| CompSci101 | Introduction to Data Structures       |    0.5 |            2 |      77 |
+| CompSci321 | Special Effects                       |    0.5 |            2 |       8 |
+| CompSci310 | Computer Generated Image              |      1 |            3 |       8 |
++------------+---------------------------------------+--------+--------------+---------+
+16 rows in set (0.01 sec)
+
+--------------
+SELECT * FROM equivalent
+--------------
+
+Empty set (0.00 sec)
+
+--------------
+INSERT INTO equivalent VALUES ("cs1026", "CompSci022", "UofT", 2,'2015-05-12')
+--------------
+
+Query OK, 1 row affected (0.02 sec)
+
+--------------
+INSERT INTO equivalent VALUES ("cs1026", "CompSci033", "UofT", 2,'2013-01-02')
+--------------
+
+Query OK, 1 row affected (0.09 sec)
+
+--------------
+INSERT INTO equivalent VALUES ("cs1026", "CompSci011", "Waterloo", 4,'1997-02-8')
+--------------
+
+Query OK, 1 row affected (0.12 sec)
+
+--------------
+INSERT INTO equivalent VALUES ("cs1026", "CompSci021", "UofT",2,'2010-01-12')
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO equivalent VALUES ("cs1027", "CompSci022", "UBC",66,'2017-06-22')
+--------------
+
+Query OK, 1 row affected (0.02 sec)
+
+--------------
+INSERT INTO equivalent VALUES ("cs1027", "CompSci022", "UofT",2,'2019-09-01')
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO equivalent VALUES ("cs2210", "CompSci101", "Laurier",77,'1998-06-12')
+--------------
+
+Query OK, 1 row affected (0.02 sec)
+
+--------------
+INSERT INTO equivalent VALUES ("cs3319", "CompSci222", "UofT", 2,'1990-09-13')
+--------------
+
+Query OK, 1 row affected (0.05 sec)
+
+--------------
+INSERT INTO equivalent VALUES ("cs3319", "CompSci319", "UBC",66,'1987-09-21')
+--------------
+
+Query OK, 1 row affected (0.04 sec)
+
+--------------
+INSERT INTO equivalent VALUES ("cs2120", "CompSci022", "UofT",2,'2018-12-10')
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO equivalent VALUES ("cs0020", "CompSci022", "UofT",2,'1999-09-17')
+--------------
+
+Query OK, 1 row affected (0.12 sec)
+
+--------------
+SELECT * FROM equivalent
+--------------
+
++--------------+-----------------+--------------+--------------+-------------+
+| UWOcoursenum | OTHERcoursecode | otherUniNick | otherunicode | datedecided |
++--------------+-----------------+--------------+--------------+-------------+
+| cs1026       | CompSci022      | UofT         |            2 | 2015-05-12  |
+| cs1026       | CompSci033      | UofT         |            2 | 2013-01-02  |
+| cs1026       | CompSci011      | Waterloo     |            4 | 1997-02-08  |
+| cs1026       | CompSci021      | UofT         |            2 | 2010-01-12  |
+| cs1027       | CompSci022      | UBC          |           66 | 2017-06-22  |
+| cs1027       | CompSci022      | UofT         |            2 | 2019-09-01  |
+| cs2210       | CompSci101      | Laurier      |           77 | 1998-06-12  |
+| cs3319       | CompSci222      | UofT         |            2 | 1990-09-13  |
+| cs3319       | CompSci319      | UBC          |           66 | 1987-09-21  |
+| cs2120       | CompSci022      | UofT         |            2 | 2018-12-10  |
+| cs0020       | CompSci022      | UofT         |            2 | 1999-09-17  |
++--------------+-----------------+--------------+--------------+-------------+
+11 rows in set (0.00 sec)
+
+--------------
+UPDATE equivalent SET datedecided = '2018-09-19' WHERE UWOcoursenum = "cs0020" AND OTHERcoursecode = "CompSci022"
+--------------
+
+Query OK, 1 row affected (0.08 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+--------------
+SELECT * FROM equivalent
+--------------
+
++--------------+-----------------+--------------+--------------+-------------+
+| UWOcoursenum | OTHERcoursecode | otherUniNick | otherunicode | datedecided |
++--------------+-----------------+--------------+--------------+-------------+
+| cs1026       | CompSci022      | UofT         |            2 | 2015-05-12  |
+| cs1026       | CompSci033      | UofT         |            2 | 2013-01-02  |
+| cs1026       | CompSci011      | Waterloo     |            4 | 1997-02-08  |
+| cs1026       | CompSci021      | UofT         |            2 | 2010-01-12  |
+| cs1027       | CompSci022      | UBC          |           66 | 2017-06-22  |
+| cs1027       | CompSci022      | UofT         |            2 | 2019-09-01  |
+| cs2210       | CompSci101      | Laurier      |           77 | 1998-06-12  |
+| cs3319       | CompSci222      | UofT         |            2 | 1990-09-13  |
+| cs3319       | CompSci319      | UBC          |           66 | 1987-09-21  |
+| cs2120       | CompSci022      | UofT         |            2 | 2018-12-10  |
+| cs0020       | CompSci022      | UofT         |            2 | 2018-09-19  |
++--------------+-----------------+--------------+--------------+-------------+
+11 rows in set (0.00 sec)
+
+Bye

@@ -1,0 +1,46 @@
+Warning: Using a password on the command line interface can be insecure.
+ERROR 1046 (3D000) at line 2: No database selected
+ERROR 1046 (3D000) at line 9: No database selected
+ERROR 1046 (3D000) at line 12: No database selected
+ERROR 1046 (3D000) at line 13: No database selected
+ERROR 1046 (3D000) at line 14: No database selected
+ERROR 1046 (3D000) at line 18: No database selected
+ERROR 1046 (3D000) at line 22: No database selected
+ERROR 1046 (3D000) at line 23: No database selected
+--------------
+CREATE VIEW view1 AS SELECT otherunics.coursename AS "OtherUNIcoursename", officialname, nickname, city, westerncs.coursename AS "UWOcoursename"
+FROM(((otherunics INNER JOIN equivalent ON coursecode = OTHERcoursecode AND unicode = otherunicode)
+INNER JOIN universities ON uniquenum = unicode) 
+INNER JOIN westerncs ON UWOcoursenum  = coursenum)
+WHERE yearstudents = 1
+--------------
+
+--------------
+SELECT * FROM view1 WHERE nickname = "UofT" ORDER BY (UWOcoursename)
+--------------
+
+--------------
+SELECT * FROM universities
+--------------
+
+--------------
+DELETE FROM universities WHERE nickname LIKE "%cord%"
+--------------
+
+--------------
+SELECT * FROM universities
+--------------
+
+--------------
+SELECT * FROM universities
+--------------
+
+--------------
+SELECT * FROM otherunics INNER JOIN universities ON unicode = uniquenum
+--------------
+
+--------------
+DELETE otherunics FROM otherunics INNER JOIN universities ON unicode  = uniquenum WHERE city = "Waterloo"
+--------------
+
+Bye

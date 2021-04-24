@@ -1,0 +1,103 @@
+Warning: Using a password on the command line interface can be insecure.
+--------------
+SHOW databases
+--------------
+
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| eyin2assign2db     |
+| mysql              |
+| performance_schema |
+| vetoffice          |
++--------------------+
+5 rows in set (0.00 sec)
+
+--------------
+DROP DATABASE IF EXISTS eyin2assign2db
+--------------
+
+Query OK, 6 rows affected (0.15 sec)
+
+--------------
+CREATE DATABASE eyin2assign2db
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+GRANT USAGE ON *.* TO 'ta'@'localhost'
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+DROP USER 'ta'@'localhost'
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+CREATE USER 'ta'@'localhost' IDENTIFIED BY 'cs3319'
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+GRANT ALL PRIVILEGES ON eyin2assign2db.* TO 'ta'@'localhost'
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+FLUSH PRIVILEGES
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SHOW tables
+--------------
+
+Empty set (0.00 sec)
+
+--------------
+CREATE TABLE universities (uniquenum TINYINT NOT NULL, officialname VARCHAR(50) NOT NULL, city VARCHAR(20) NOT NULL, provincecode CHAR(2) NOT NULL, nickname VARCHAR(20) NOT NULL, PRIMARY KEY(uniquenum))
+--------------
+
+Query OK, 0 rows affected (0.12 sec)
+
+--------------
+CREATE TABLE westerncs (coursenum CHAR(6) NOT NULL, coursename VARCHAR(50) NOT NULL, weight FLOAT NOT NULL, suffix VARCHAR(3), PRIMARY KEY(coursenum))
+--------------
+
+Query OK, 0 rows affected (0.12 sec)
+
+--------------
+CREATE TABLE otherunics (coursecode CHAR(10) NOT NULL, coursename VARCHAR(50) NOT NULL, weight FLOAT NOT NULL, yearstudents TINYINT NOT NULL, unicode TINYINT NOT NULL,FOREIGN KEY (unicode) REFERENCES universities(uniquenum) ON DELETE CASCADE)
+--------------
+
+Query OK, 0 rows affected (0.22 sec)
+
+--------------
+CREATE TABLE equivalent(UWOcoursenum CHAR(6) NOT NULL, OTHERcoursecode CHAR(10) NOT NULL, otherUniNick VARCHAR(20),otherunicode TINYINT NOT NULL, datedecided DATE NOT NULL, FOREIGN KEY(UWOcoursenum) REFERENCES westerncs(coursenum) ON DELETE CASCADE)
+--------------
+
+Query OK, 0 rows affected (0.06 sec)
+
+--------------
+SHOW tables
+--------------
+
++--------------------------+
+| Tables_in_eyin2assign2db |
++--------------------------+
+| equivalent               |
+| otherunics               |
+| universities             |
+| westerncs                |
++--------------------------+
+4 rows in set (0.00 sec)
+
+Bye
