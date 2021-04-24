@@ -1,0 +1,7 @@
+2,University Of Toronto,Toronto,ON,UofT
+4,University of Waterloo,Waterloo,ON,Waterloo
+24,Concordia University,Montreal,QB,Concord
+55,McMaster University,Hamilton,ON,Mac
+66,University of British Columbia,Vancouver,BC,UBC
+77,Wilfred Laurier University,Waterloo,ON,Laurier
+88,McGill University,Montreal,QB,McGill
