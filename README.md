@@ -4,6 +4,6 @@
 # eyin2script1 : Build databses and tables
 # eyin2script2 : insert data into tables
 # eyin2script3 : queries
-# eyin2script4 : manupulating views
+# eyin2script4 : manipulating views
 
 # .txt files contain output for all .sql script files
